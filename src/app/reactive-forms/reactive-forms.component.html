@@ -1,0 +1,37 @@
+<form novalidate (submit)="onSubmit()" class="row justify-content-md-center" [formGroup]="reactiveform">
+    <div class="row" style="margin-top: 100px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        <h3 style="text-align: center;">Validate form - Reactive Form</h3>
+            <div class="form-group row">
+            <label for="example-text-input" class="col-md-2 col-form-label">Name:</label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" id="example-text-input" formControlName="name">
+                <div class="alert alert-danger" *ngIf="reactiveform.controls.name?.errors?.required 
+                                                    && reactiveform.controls.name?.touched">Name is required!</div>
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
+            <div class="col-md-10">
+                <input class="form-control" type="email" id="example-email-input" formControlName="email">
+                <div class="alert alert-danger" *ngIf="reactiveform.controls.email?.errors?.required && reactiveform.controls.email?.touched">Email is required!</div>
+            </div>
+            </div>
+            <div class="form-group row">
+            <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>
+            <div class="col-md-10">
+                <input class="form-control" type="tel" id="example-tel-input" formControlName="tel">
+                <div class="alert alert-danger" *ngIf="reactiveform.controls.tel?.errors?.required && reactiveform.controls.tel?.touched">Tel is required!</div>
+            </div>
+            </div>
+            <div class="form-group row">
+            <div class="col-md-10 offset-md-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    </form>
+      
